@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	<!-- Coonnection properties  -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.username">system</property>
+		<property name="connection.password">oracle</property>
+		
+	<!-- show the sql query and its format  -->
+		<property name="format_sql">true</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+	
+	<!-- create table if table not exist otherwise update the records  -->
+		<property name="hbm2ddl.auto">update</property>
+
+			<mapping resource="com/nt/cfgs/hibernate_luckyDraw.hbm.xml" />  
+
+	</session-factory>
+</hibernate-configuration>
